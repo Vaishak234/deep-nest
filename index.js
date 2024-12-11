@@ -7,7 +7,9 @@ const menuRoutes = require('./routes/menu')
 
 dbConnection()
 
-app.use(cors())
+app.use(cors({
+  origin: 'https://deep-net-frontend.vercel.app',  // Specify the frontend URL you want to allow
+}));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
 
